@@ -1,6 +1,7 @@
 PibleyFacts::Application.routes.draw do
-  resources :facts
   root :to => 'facts#index'
+  resources :facts
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
