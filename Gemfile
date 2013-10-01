@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#ruby=1.9.3
+#ruby-gemset=pibley
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -25,6 +28,9 @@ gem 'jquery-rails'
 gem 'pry-rails', :group => :development
 
 gem 'annotate', ">=2.5.0"
+gem 'bootstrap-sass', '2.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -2,7 +2,8 @@ class FactsController < ApplicationController
   # GET /facts
   # GET /facts.json
   def index
-    @facts = Fact.all
+    @fact = Fact.new(params[:fact])
+    @facts = Fact.paginate(page: params[:page]).order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,13 +42,14 @@ class FactsController < ApplicationController
   # POST /facts.json
   def create
     @fact = Fact.new(params[:fact])
+    @facts = Fact.paginate(page: params[:page]).order("created_at DESC")
 
     respond_to do |format|
       if @fact.save
-        format.html { redirect_to @fact, notice: 'Fact was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Fact was successfully created.' }
         format.json { render json: @fact, status: :created, location: @fact }
       else
-        format.html { render action: "new" }
+        format.html { render action: "index" }
         format.json { render json: @fact.errors, status: :unprocessable_entity }
       end
     end
