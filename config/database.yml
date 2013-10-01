@@ -53,5 +53,5 @@ production:
   encoding: unicode
   database: pibley_facts_production
   pool: 5
-  username:
+  username: pibley_facts
   password:
